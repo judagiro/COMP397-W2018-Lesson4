@@ -22,8 +22,7 @@ var objects;
         // Public Methods
         Scene.prototype.Start = function () {
         };
-        Scene.prototype.update = function () {
-            return 0;
+        Scene.prototype.Update = function () {
         };
         Scene.prototype.Main = function () {
         };

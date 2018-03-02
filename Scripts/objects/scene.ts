@@ -21,8 +21,7 @@ module objects {
 
         }
 
-        public update():number {
-            return 0;
+        public Update():void {
 
         }
 

@@ -9,9 +9,12 @@
     var assetManager;
     var assetManifest;
     var currentScene;
+    var currentState;
     assetManifest = [
         { id: "clickMeButton", src: "./Assets/images/clickMeButton.png" },
-        { id: "startButton", src: "./Assets/images/startButton.png" }
+        { id: "startButton", src: "./Assets/images/startButton.png" },
+        { id: "nextButton", src: "./Assets/images/nextButton.png" },
+        { id: "backButton", src: "./Assets/images/backButton.png" }
     ];
     // preloads assets
     function Init() {
@@ -28,34 +31,36 @@
         createjs.Ticker.framerate = 60; //60 FPS
         createjs.Ticker.on("tick", Update);
         objects.Game.currentScene = config.Scene.START;
+        currentState = config.Scene.START;
         Main();
     }
     function Update() {
         // if the scene that is playing returns another current scene
         // then call Main again and switch the scene
-        if (currentScene.update() != objects.Game.currentScene) {
-            console.log(objects.Game.currentScene);
+        if (currentState != objects.Game.currentScene) {
             Main();
         }
+        currentScene.Update();
         stage.update(); // redraws the stage
     }
     function Main() {
+        // remove all current objects from the stage
+        stage.removeAllChildren();
         switch (objects.Game.currentScene) {
             case config.Scene.START:
-                // remove all current objects from the stage
-                stage.removeAllChildren();
                 // instantiate a new scene object    
                 currentScene = new scenes.StartScene(assetManager);
-                // add the new scene object to stage
-                stage.addChild(currentScene);
                 break;
             case config.Scene.PLAY:
-                // do some other stuff
+                currentScene = new scenes.PlayScene(assetManager);
                 break;
             case config.Scene.OVER:
-                // do the final stuff
+                currentScene = new scenes.OverScene(assetManager);
                 break;
         }
+        currentState = objects.Game.currentScene;
+        // add the new scene object to stage
+        stage.addChild(currentScene);
     }
     window.onload = Init;
 })();
