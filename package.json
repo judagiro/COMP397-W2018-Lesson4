@@ -1,5 +1,5 @@
 {
-  "name": "comp397-w2018-lesson3",
+  "name": "comp397-w2018-lesson4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/judagiro/COMP397-W2018-Lesson3.git"
+    "url": "git+https://github.com/judagiro/COMP397-W2018-Lesson4.git"
   },
   "author": "Julian Giraldo <judagiro@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/judagiro/COMP397-W2018-Lesson3/issues"
+    "url": "https://github.com/judagiro/COMP397-W2018-Lesson4/issues"
   },
-  "homepage": "https://github.com/judagiro/COMP397-W2018-Lesson3#readme",
+  "homepage": "https://github.com/judagiro/COMP397-W2018-Lesson4#readme",
   "devDependencies": {
     "@types/easeljs": "^1.0.0"
   },

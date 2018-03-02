@@ -41,7 +41,6 @@
 
     
     function Update():void {
-
         // if the scene that is playing returns another current scene
         // then call Main again and switch the scene
         if(currentScene.update() != objects.Game.currentScene) {
